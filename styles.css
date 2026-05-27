@@ -121,7 +121,7 @@ p { margin: 0; color: var(--gray-300); }
 .brand-text { display: grid; line-height: 1.1; }
 .brand-text strong { color: var(--white); font-size: .95rem; }
 .brand-text small { margin-top: 3px; color: var(--gray-400); font-size: .74rem; }
-.site-nav { justify-self: center; display: flex; gap: 4px; align-items: center; }
+.site-nav { justify-self: end; display: flex; gap: 4px; align-items: center; }
 .site-nav a, .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -235,6 +235,17 @@ p { margin: 0; color: var(--gray-300); }
   position: relative;
   z-index: 2;
   max-width: 690px;
+}
+.hero-avatar { display: none; }
+.hero-avatar img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px var(--gold),
+    0 0 0 6px rgba(214, 163, 58, 0.18),
+    0 22px 54px rgba(0, 0, 0, 0.55);
 }
 .hero h1 {
   margin: 0;
@@ -445,6 +456,7 @@ p { margin: 0; color: var(--gray-300); }
   .nav-toggle.is-open span:first-child { transform: translateY(3.5px) rotate(45deg); }
   .nav-toggle.is-open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
   .nav-cta { display: none; }
+  .hero-avatar { display: block; margin-bottom: 30px; }
   .hero-layout, .strategy-grid, .value-layout, .process-layout, .faq-layout, .split-heading, .cta-panel { grid-template-columns: 1fr; }
   .hero-visual { max-width: 520px; min-height: auto; }
   .hero-proof, .strategy-points { grid-template-columns: 1fr; }
@@ -461,14 +473,17 @@ p { margin: 0; color: var(--gray-300); }
   .hero {
     min-height: auto;
     align-items: flex-start;
-    padding-top: 92px;
+    padding-top: 10px;
     padding-bottom: 72px;
   }
   .hero::before {
     background-image:
-      linear-gradient(180deg, rgba(5, 8, 14, 0.98) 0%, rgba(5, 8, 14, 0.94) 48%, rgba(5, 8, 14, 0.74) 100%),
+      linear-gradient(90deg, rgba(5, 8, 14, 0.99) 0%, rgba(5, 8, 14, 0.96) 100%),
       url("./images/hero-portfolio-bg.png");
-    background-position: 66% center;
+  }
+  .hero-avatar img {
+    width: 130px;
+    height: 130px;
   }
   .hero .container,
   .container { width: min(100% - 28px, var(--container)); }
